@@ -14,7 +14,7 @@ test("Studies exist", async ({ page }) => {
     "https://bepartofresearch.nihr.ac.uk/results/search-results?query=&location="
   );
 
-  const studiesFoundNumber = page.locator(".search-results");
+  const studySearchResults = page.locator(".search-results");
 
-  expect(studiesFoundNumber).toBeTruthy();
+  expect(studySearchResults).toBeTruthy();
 });
