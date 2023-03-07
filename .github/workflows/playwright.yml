@@ -1,6 +1,8 @@
-name: Playwright Tests
+name: BPoR Production Smoke Tests
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * *"
 jobs:
   test:
     timeout-minutes: 60
