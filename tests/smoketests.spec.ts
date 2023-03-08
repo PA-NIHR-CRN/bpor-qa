@@ -18,3 +18,17 @@ test("Studies exist", async ({ page }) => {
 
   expect(studySearchResults).toBeTruthy();
 });
+
+test("Specific study data loads", async ({ page }) => {
+  await page.goto(
+    "https://bepartofresearch.nihr.ac.uk/trial-details/trial-detail?trialId=1&location=&distance="
+  );
+
+  await page.waitForSelector(".primary-heading");
+
+  const studyTitle = page.locator(".primary-heading");
+
+  await expect(studyTitle).toHaveText(
+    /A comparison of pictures vs. text for the explanation of cancer statistics to the general public/
+  );
+});
