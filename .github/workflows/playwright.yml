@@ -36,7 +36,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.NIHR_ALERTS_SLACK_WEBHOOK }}
           SLACK_COLOR: "failure"
           SLACK_MESSAGE: "BPoR (PROD) smoke tests have failed"
           SLACK_TITLE: "BPoR (PROD) SMOKE TESTS: FAILED"
@@ -52,7 +52,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.NIHR_ALERTS_SLACK_WEBHOOK }}
           SLACK_COLOR: "success"
           SLACK_MESSAGE: "BPoR (PROD) smoke tests have passed"
           SLACK_TITLE: "BPoR (PROD) SMOKE TESTS: SUCCESS"
