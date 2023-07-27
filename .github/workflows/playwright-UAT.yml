@@ -38,8 +38,8 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: "failure"
-          SLACK_MESSAGE: "BPoR (PROD) smoke tests have failed"
-          SLACK_TITLE: "BPoR (PROD) SMOKE TESTS: FAILED"
+          SLACK_MESSAGE: "BPoR (UAT) smoke tests have failed"
+          SLACK_TITLE: "BPoR (UAT) SMOKE TESTS: FAILED"
 
   slack-success:
     name: Send slack message success
@@ -54,5 +54,5 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: "success"
-          SLACK_MESSAGE: "BPoR (PROD) smoke tests have passed"
-          SLACK_TITLE: "BPoR (PROD) SMOKE TESTS: SUCCESS"
+          SLACK_MESSAGE: "BPoR (UAT) smoke tests have passed"
+          SLACK_TITLE: "BPoR (UAT) SMOKE TESTS: SUCCESS"
