@@ -23,7 +23,6 @@ test("contact form test @UATONLY", async ({ page }) => {
 
 test("contact form special characters", async ({ page }) => {
   await page.goto(process.env.URL + "about/#contact-form");
-  await page.goto(process.env.URL + "about/#contact-form");
 
     await page.locator("#Name").type("<>£$%^&()={}[]_-'@:;/?")
     expect(page.locator("#Name")).toHaveValue('£-');
