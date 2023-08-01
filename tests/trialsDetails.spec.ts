@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 // the id of the study ISRCTN13072268 on prod and uat
 let trialId = 9570;
 if (process.env.URL != null && process.env.URL.includes("uat")) {
+if (process.env.URL != null && process.env.URL.includes("uat")) {
   trialId = 9858;
 }
 
@@ -20,9 +21,23 @@ test("advert appears on page", async ({ page }) => {
   // Expect there to be an advert on the page
   await expect(advert).toBeTruthy();
 });
+  // using a dementia study for the JDR adverts
+  await page.goto(
+    process.env.URL +
+      "trial-details/trial-detail?trialId=" +
+      trialId +
+      "&location=&distance="
+  );
+
+  const advert = page.locator(".bpor-advert").first();
+
+  // Expect there to be an advert on the page
+  await expect(advert).toBeTruthy();
+});
+
 
 // commenting out to focus tests on hard-coded values and data provided from the backend
-
+// test also has in-stability due to adverts being freely changable and current change in adverts underway
 // test("JDR advert points to correct URL", async ({ page }) => {
 //   // using a dementia study for the JDR adverts
 //   await page.goto(
