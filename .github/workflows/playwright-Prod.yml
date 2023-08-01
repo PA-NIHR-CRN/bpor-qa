@@ -17,7 +17,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: URL=https://bepartofresearch.nihr.ac.uk/ npx playwright test
+        run: URL=https://bepartofresearch.nihr.ac.uk/ npx playwright test --grep-invert @UATONLY
       - uses: actions/upload-artifact@v3
         if: always()
         with:
