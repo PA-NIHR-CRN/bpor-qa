@@ -2,7 +2,7 @@ name: BPoR UAT Smoke Tests
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 7 * * *"
+    - cron: "50 7 * * *"
 jobs:
   test:
     timeout-minutes: 60
