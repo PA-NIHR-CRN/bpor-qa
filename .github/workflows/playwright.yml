@@ -2,7 +2,7 @@ name: BPoR Production Smoke Tests
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 6 * * *"
+    - cron: "30 8 * * *"
 jobs:
   test:
     timeout-minutes: 60
